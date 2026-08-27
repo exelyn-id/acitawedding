@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- =========================
+         SEO Basa & Meta Tags
+    ========================== -->
+    <title>Acita Wedding Organizer | Wujudkan Pernikahan Impian Anda</title>
+    <meta name="description" content="Acita Wedding Organizer melayani jasa perencanaan pernikahan terbaik di Bogor dan sekitarnya. Solusi lengkap dari katering, tata rias, hingga paket pernikahan impian.">
+    <meta name="keywords" content="wedding organizer bogor, paket pernikahan, jasa katering pernikahan, wedding planner, acita wedding, pernikahan impian, event organizer bogor">
+    <meta name="author" content="Acita Wedding Organizer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://acitawedding.vercel.app/">
+
+    <!-- =========================
+         Open Graph (Facebook, WhatsApp, dll)
+    ========================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acitawedding.vercel.app/">
+    <meta property="og:title" content="Acita Wedding Organizer | Wujudkan Pernikahan Impian Anda">
+    <meta property="og:description" content="Layanan perencanaan pernikahan profesional di Bogor. Kami hadir untuk memastikan setiap detik hari bahagia Anda menjadi memori yang tak terlupakan.">
+    <!-- Gambar yang akan muncul saat link web dibagikan (pastikan file logo.jpg ada) -->
+    <meta property="og:image" content="https://acitawedding.vercel.app/logo.jpg">
+
+    <!-- =========================
+         Twitter Cards
+    ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://acitawedding.vercel.app/">
+    <meta name="twitter:title" content="Acita Wedding Organizer | Wujudkan Pernikahan Impian Anda">
+    <meta name="twitter:description" content="Layanan perencanaan pernikahan profesional di Bogor. Kami siap mewujudkan momen spesial Anda.">
+    <meta name="twitter:image" content="https://acitawedding.vercel.app/logo.jpg">
+
+    <!-- Favicon (Ikon kecil di tab browser) -->
+    <link rel="icon" type="image/jpeg" href="./logo.jpg">
+
+    <!-- =========================
+         External Assets & Styles
+    ========================== -->
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            red: '#E61A23',
+                            yellow: '#F2A900'
+                        },
+                        secondary: {
+                            orange: '#F37021'
+                        },
+                        dark: '#1a1a1a',
+                        light: '#fafafa'
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        
+        /* Custom Swiper Controls */
+        .swiper-button-next, .swiper-button-prev {
+            color: #E61A23 !important;
+            background: rgba(255,255,255,0.8);
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px !important; font-weight: bold; }
+        .swiper-pagination-bullet-active { background-color: #E61A23 !important; }
+        
+        /* Glassmorphism Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Vibrant Additions */
+        .vibrant-gradient-text {
+            background: linear-gradient(135deg, #E61A23, #F37021, #F2A900);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .vibrant-gradient-bg { background: linear-gradient(135deg, #E61A23, #F37021, #F2A900); }
+        .vibrant-shadow { box-shadow: 0 10px 25px -5px rgba(230, 26, 35, 0.4), 0 8px 10px -6px rgba(243, 112, 33, 0.3); }
+        
+        /* Floating Blob Backgrounds */
+        .blob-1 {
+            position: absolute; top: -10%; left: -10%; width: 400px; height: 400px;
+            background: rgba(230, 26, 35, 0.15); border-radius: 50%; filter: blur(80px);
+            z-index: 0; pointer-events: none;
+        }
+        .blob-2 {
+            position: absolute; bottom: -10%; right: -10%; width: 500px; height: 500px;
+            background: rgba(242, 169, 0, 0.15); border-radius: 50%; filter: blur(80px);
+            z-index: 0; pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-light text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header id="navbar" class="fixed w-full top-0 z-40 bg-white transition-all duration-300 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Placeholder -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="./logo.png" alt="Acita Wedding Logo" class="h-12 w-auto object-contain group-hover:scale-110 transition-transform duration-300" />
+                    <div class="flex flex-col justify-center">
+                        <span class="text-2xl font-black text-black leading-none font-sans tracking-tight">ACITA</span>
+                        <span class="text-[0.6rem] font-bold text-gray-500 tracking-[0.25em] leading-none mt-1">WEDDING ORGANIZER</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-sm font-bold text-gray-600 hover:text-primary-red transition-colors">Beranda</a>
+                    <a href="#layanan" class="text-sm font-bold text-gray-600 hover:text-primary-red transition-colors">Layanan</a>
+                    <a href="#galeri" class="text-sm font-bold text-gray-600 hover:text-primary-red transition-colors">Galeri</a>
+                    <a href="#kontak" class="text-sm font-bold text-gray-600 hover:text-primary-red transition-colors">Lokasi & Kontak</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 text-2xl focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-full left-0 w-full shadow-lg border-t border-gray-100 flex-col">
+            <a href="#beranda" class="mobile-link block px-6 py-4 border-b border-gray-50 text-gray-800 font-bold hover:text-primary-red hover:bg-gray-50">Beranda</a>
+            <a href="#layanan" class="mobile-link block px-6 py-4 border-b border-gray-50 text-gray-800 font-bold hover:text-primary-red hover:bg-gray-50">Layanan</a>
+            <a href="#galeri" class="mobile-link block px-6 py-4 border-b border-gray-50 text-gray-800 font-bold hover:text-primary-red hover:bg-gray-50">Galeri</a>
+            <a href="#kontak" class="mobile-link block px-6 py-4 border-b border-gray-50 text-gray-800 font-bold hover:text-primary-red hover:bg-gray-50">Lokasi & Kontak</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="beranda" class="relative pt-20 h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Vibrant Overlay -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Acita Wedding" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-primary-red/20 mix-blend-multiply"></div>
+            <!-- Extra vibrant glow -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-primary-red/30 via-transparent to-primary-yellow/20"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl text-white">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-gradient-to-r from-primary-red/80 to-secondary-orange/80 border border-white/20 text-white font-bold text-xs uppercase tracking-widest mb-6 backdrop-blur-md shadow-lg">
+                    <i class="fas fa-sparkles mr-1"></i> Momen Spesial Anda
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 drop-shadow-lg">
+                    Wujudkan Pernikahan <br/><span class="vibrant-gradient-text drop-shadow-sm bg-white">Impian Anda</span> Bersama Acita
+                </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-10 font-sans font-medium drop-shadow-md">
+                    Dari perencanaan matang hingga pelaksanaan sempurna, kami hadir untuk memastikan setiap detik hari bahagia Anda menjadi memori yang tak terlupakan.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/6282110210341?text=Halo%20Acita%20Wedding%20Organizer,%20saya%20ingin%20bertanya%20mengenai%20layanan%20Anda." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 vibrant-gradient-bg text-white font-bold px-8 py-4 rounded-full vibrant-shadow hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        Konsultasi Sekarang
+                    </a>
+                    <a href="#galeri" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-primary-red hover:scale-105 transition-all duration-300">
+                        Lihat Galeri
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LAYANAN (SERVICES) SECTION -->
+    <section id="layanan" class="py-24 bg-white relative overflow-hidden">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-extrabold tracking-wider uppercase text-sm mb-2 block">Layanan Kami</span>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">Solusi Lengkap <span class="vibrant-gradient-text">Pernikahan Anda</span></h2>
+                <div class="w-24 h-1.5 vibrant-gradient-bg mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg font-medium">Kami menyediakan berbagai layanan komprehensif untuk memastikan setiap detail acara Anda tertangani dengan profesional, menghadirkan nuansa bahagia yang penuh warna.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Each service card is updated with vibrant hover effects and solid colored icon backgrounds -->
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-place-of-worship text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Acara keagamaan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-user-tie text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Jasa petugas pernikahan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-utensils text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Katering</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-gift text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Paket pernikahan</h3>
+                </div>
+                
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-baby text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Perencanaan baby shower</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-glass-cheers text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Perjamuan pernikahan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-fan text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Pernikahan gaya Asia</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-plane-departure text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Pernikahan destinasi</h3>
+                </div>
+                
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Pernikahan pedesaan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-church text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Pernikahan keagamaan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-user-group text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Pernikahan kecil</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-sun text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Pernikahan luar ruangan</h3>
+                </div>
+                
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-cake-candles text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Pesta hari jadi</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-ring text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Pesta pertunangan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Perkawinan dan pertunangan</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-red/50 shadow-sm hover:shadow-primary-red/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-red/10 group-hover:bg-primary-red rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-red group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-briefcase text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-red transition-colors">Perusahaan & konferensi</h3>
+                </div>
+                
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-primary-yellow/50 shadow-sm hover:shadow-primary-yellow/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-primary-yellow/10 group-hover:bg-primary-yellow rounded-2xl shadow-sm flex items-center justify-center mb-5 text-primary-yellow group-hover:text-white transition-colors duration-300 transform group-hover:rotate-6">
+                        <i class="fas fa-crown text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-primary-yellow transition-colors">Quinceanera</h3>
+                </div>
+                <div class="group bg-white p-6 rounded-2xl border-2 border-transparent hover:border-secondary-orange/50 shadow-sm hover:shadow-secondary-orange/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center cursor-default">
+                    <div class="w-16 h-16 bg-secondary-orange/10 group-hover:bg-secondary-orange rounded-2xl shadow-sm flex items-center justify-center mb-5 text-secondary-orange group-hover:text-white transition-colors duration-300 transform group-hover:-rotate-6">
+                        <i class="fas fa-spa text-3xl"></i>
+                    </div>
+                    <h3 class="font-black text-sm text-gray-800 font-sans group-hover:text-secondary-orange transition-colors">Rambut dan tata rias</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GALERI FOTO SECTION -->
+    <section id="galeri" class="py-24 bg-gradient-to-br from-gray-50 to-orange-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-secondary-orange font-extrabold tracking-wider uppercase text-sm mb-2 block">Portofolio</span>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">Galeri Momen <span class="vibrant-gradient-text">Bahagia</span></h2>
+                <div class="w-24 h-1.5 vibrant-gradient-bg mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg font-medium">Cuplikan kisah cinta dan kebahagiaan yang penuh warna yang telah kami wujudkan bersama para klien tercinta.</p>
+            </div>
+
+            <!-- Swiper Carousel -->
+            <div class="swiper mySwiper relative px-4 pb-12">
+                <div class="swiper-wrapper">
+                    <!-- 10 Foto Wedding via Unsplash -->
+                    <div class="swiper-slide"><img src="./galeri/foto-1.jpg" alt="Wedding 1" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-2.jpg" alt="Wedding 2" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-3.jpg" alt="Wedding 3" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-4.jpg" alt="Wedding 4" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-5.jpg" alt="Wedding 5" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-6.jpg" alt="Wedding 6" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-7.jpg" alt="Wedding 7" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-8.jpg" alt="Wedding 8" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-9.jpg" alt="Wedding 9" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                    <div class="swiper-slide"><img src="./galeri/foto-10.jpg" alt="Wedding 10" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-sm"></div>
+                </div>
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next hidden md:flex"></div>
+                <div class="swiper-button-prev hidden md:flex"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LOKASI & KONTAK SECTION -->
+    <section id="kontak" class="py-24 bg-white relative overflow-hidden">
+        <div class="blob-1" style="background: rgba(243, 112, 33, 0.1); top: auto; bottom: -10%;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Info Kontak -->
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-orange-50 relative">
+                    <span class="text-primary-yellow font-extrabold tracking-wider uppercase text-sm mb-2 block">Konsultasi Gratis</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">Hubungi <span class="vibrant-gradient-text">Kami</span></h2>
+                    <div class="w-24 h-1.5 vibrant-gradient-bg mb-8 rounded-full"></div>
+                    <p class="text-gray-600 mb-10 font-sans text-lg font-medium">Mari diskusikan konsep pernikahan impian Anda yang penuh warna bersama tim profesional kami.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-red/10 group-hover:bg-primary-red flex items-center justify-center text-primary-red group-hover:text-white shrink-0 transition-all duration-300 transform group-hover:rotate-6">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-gray-900 mb-1 text-lg">Alamat</h4>
+                                <p class="text-gray-600 font-sans font-medium leading-relaxed">Jl. Raya Kencana, RT.01/RW.03,<br>Mekarwangi, Tanah Sareal,<br>Kota Bogor, Jawa Barat 16168</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-14 h-14 rounded-2xl bg-secondary-orange/10 group-hover:bg-secondary-orange flex items-center justify-center text-secondary-orange group-hover:text-white shrink-0 transition-all duration-300 transform group-hover:-rotate-6">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-gray-900 mb-1 text-lg">Instagram</h4>
+                                <a href="https://instagram.com/acitawedding" target="_blank" class="text-gray-600 font-sans font-medium hover:text-secondary-orange transition-colors">@acitawedding</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 group">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-yellow/10 group-hover:bg-primary-yellow flex items-center justify-center text-primary-yellow group-hover:text-white shrink-0 transition-all duration-300 transform group-hover:rotate-6">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-gray-900 mb-1 text-lg">WhatsApp</h4>
+                                <a href="https://wa.me/6282110210341?text=Halo%20Acita%20Wedding%20Organizer,%20saya%20ingin%20bertanya%20mengenai%20layanan%20Anda." target="_blank" class="text-gray-600 font-sans font-medium hover:text-primary-yellow transition-colors">+62 821 1021 0341</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl shadow-primary-red/10 border-[6px] border-white h-[450px] relative z-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.900264837182!2d106.78019797374508!3d-6.534278763876367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c3aa2d6bf5bb%3A0x861829aa15ff9746!2sAcita%20Wedding%20Organizer%20Bogor!5e0!3m2!1sen!2sid!4v1787799304945!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-dark py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex flex-col md:flex-row items-center gap-2">
+                <span class="text-xl font-black text-white leading-none font-sans tracking-tight">ACITA</span>
+                <span class="text-gray-400 text-sm font-sans">&copy; 2026 Wedding Organizer. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://instagram.com/acitawedding" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-red transition-all">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6282110210341?text=Halo%20Acita%20Wedding%20Organizer,%20saya%20ingin%20bertanya%20mengenai%20layanan%20Anda." target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp"
+       class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-gradient-to-tr from-[#128C7E] to-[#25D366] text-white w-16 h-16 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.5)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.6)] hover:-translate-y-2 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center overflow-hidden group">
+        <div class="absolute inset-0 bg-white/20 rounded-full animate-ping opacity-75"></div>
+        <i class="fab fa-whatsapp text-4xl relative z-10 drop-shadow-md"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Scroll Effect
+            const header = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'glass-nav');
+                    header.classList.remove('bg-white');
+                } else {
+                    header.classList.remove('shadow-md', 'glass-nav');
+                    header.classList.add('bg-white');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const menuIcon = mobileBtn.querySelector('i');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                if(mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu on link click
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+
+            // Initialize Swiper Carousel
+            const swiper = new Swiper('.mySwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    768: { slidesPerView: 3, spaceBetween: 30 },
+                    1024: { slidesPerView: 4, spaceBetween: 30 },
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
